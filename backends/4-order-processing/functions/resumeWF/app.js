@@ -15,6 +15,7 @@
 exports.handler = async (event, context) => {
 
     console.log(JSON.stringify(event, null, 2))
+    console.log("[Test] Lambda handler triggered by test PR"
 
  /*
     2.**********************************************
