@@ -4,6 +4,7 @@ let FriendlyTime=''
 let Message =''
 
 exports.lambdaHandler = async (event, context) => {
+    console.log("[Test] GenerateHtml Lambda modified via PR");
     
     const endTime= event.time
     const dbEvent = event.dbResults
