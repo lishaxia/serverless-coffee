@@ -1,0 +1,10 @@
+{
+  "StartArt": "PassState",
+  "States": {
+    "PassState": {
+      "Type": "Pass",
+      "Result": "Step Function reached",
+      "End": true
+    }
+  }
+}
