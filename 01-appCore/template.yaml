@@ -864,3 +864,13 @@ Outputs:
   ServerlesspressoConfigServiceRestApi:
     Description: "API Prod stage endpoint"
     Value: !Sub "https://${RESTApiConfigService}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+
+DummyHelloFunction:
+  Type: AWS::Serverless::Function
+  Properties:
+    CodeUri: ../backends/0-dummy/
+    Handler: app.handler
+    Runtime: nodejs14.x
+    Timeout: 3
+    MemorySize: 128
+  
