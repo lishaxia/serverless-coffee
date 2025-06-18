@@ -864,3 +864,9 @@ Outputs:
   ServerlesspressoConfigServiceRestApi:
     Description: "API Prod stage endpoint"
     Value: !Sub "https://${RESTApiConfigService}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+
+DummyStepFunction:
+  Type: AWS::Serverless::StateMachine
+  Properties:
+    DefinitionUri: ../backends/0-dummy/statemachine/dummy.asl.json
+    Role: arn:aws:iam::123456789012:role/service-role/DummyStepFunctionRole
