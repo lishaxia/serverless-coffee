@@ -864,3 +864,19 @@ Outputs:
   ServerlesspressoConfigServiceRestApi:
     Description: "API Prod stage endpoint"
     Value: !Sub "https://${RESTApiConfigService}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+
+DummyEventRule:
+  Type: AWS::Events::Rule
+  Properties:
+    Description: "Routes dummy event to Step Function"
+    EventBusName: !Ref ServerlesspressoEventBus
+    State: ENABLED
+    EventPattern:
+      source:
+        - dummy.source
+      detail-type:
+        - DummyEvent
+    Targets:
+     - Arn: arn:aws:states:${AWS::AccountId}:stateMachine:DummyStepFunction
+       Id: DummyStepFunctionTarget
+       RoleArn: arn:aws:iam:: 123456789012:role/DummyEventRole
